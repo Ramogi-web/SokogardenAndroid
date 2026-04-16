@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity"
+    android:background="#fff"
+    android:orientation="vertical">
+
+<!--    Below is textview -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete payment with M-pesa"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#03CA0C"/>
+
+<!--    a card view that holds all our content-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="12dp"
+        app:cardCornerRadius="20dp">
+
+<!--         below is a linear layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#7DCA97">
+
+<!--            Below is a text view where the product shall be binded-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtProductName"
+                android:text="Product Name"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                android:textColor="#03155F"/>
+
+<!--            below is an image of  the product image-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/imgProduct"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"/>
+
+<!--            below is the textview for the product description-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtProductDescription"
+                android:text="Description will appear here"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:textColor="#07417C"/>
+
+<!--            below is a textview for the product cost-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtProductCost"
+                android:text="KES 1000"
+                android:textSize="30sp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="#3254F4"
+                android:fontFamily="sans-serif-condensed-light"/>
+
+<!--            below is edit text for entering mobile number-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone"
+                android:hint="Enter phone number eg +2547....."
+                android:textColorHint="#000"
+                android:textColor="#000"
+                android:padding="15dp"
+                android:layout_marginTop="16dp"
+                android:background="#fff"/>
+
+<!--            button to campelete payment-->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pay"
+                android:text="Pay Now"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginLeft="70dp"
+                android:backgroundTint="#8F20A2"
+                android:textColor="#FBFAFB"
+                android:textSize="23sp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
