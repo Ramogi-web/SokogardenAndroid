@@ -31,11 +31,31 @@ class About : AppCompatActivity() {
         tts = TextToSpeech(this){
             if (it == TextToSpeech.SUCCESS){
                 tts.language=Locale.US
+
+                // 🔊 TRY TO PICK A MALE-SOUNDING VOICE
+                val maleVoice = tts.voices.firstOrNull { voice ->
+                    voice.name.contains("en-us", ignoreCase = true)
+                }
+
+                if (maleVoice != null) {
+                    tts.voice = maleVoice
+                }
+
+                // 🎚️ MAKE VOICE DEEPER (MORE MALE-LIKE)
+                tts.setPitch(0.5f)
+                tts.setSpeechRate(1.0f)
             }
-        }//end
+        }
+
+        //end
+
 
         speakButton.setOnClickListener {
             val text = textView.text.toString()
+
+            // 🔥 EDITED PART (ensure male-like voice on every click)
+            tts.setPitch(0.5f)
+
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
         }
 
